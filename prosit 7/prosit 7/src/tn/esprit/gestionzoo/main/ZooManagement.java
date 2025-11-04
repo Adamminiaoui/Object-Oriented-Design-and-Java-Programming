@@ -1,34 +1,36 @@
 package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.exception.InvalidAgeException;
+import tn.esprit.gestionzoo.exception.ZooFullException;
 
 public class ZooManagement {
 
-    public static void main(String[] args) {
-        Animal lion = new Animal();
-        lion.setName("Simba");
-        lion.setAge(8);
-        lion.setFamily("Cats");
-        lion.setMammal(true);
+    public static void main(String[] args) throws ZooFullException {
+        //Animal lion = new Animal();
+        //lion.setName("Simba");
+        //lion.setAge(8);
+        //lion.setFamily("Cats");
+        //lion.setMammal(true);
 
-        Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
-        Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
+        //Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
+        //Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
 
 
-        Animal dog = new Animal("Canine", "Snoopy", 2, true);
+       // Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
 
         //System.out.println(myZoo.addAnimal(lion));
         //System.out.println(myZoo.addAnimal(dog));
 
-        myZoo.displayAnimals();
+        //myZoo.displayAnimals();
 
         //System.out.println(myZoo.searchAnimal(dog));
-        Animal dog2 = new Animal("Canine", "lll", 2, true);
+        //Animal dog2 = new Animal("Canine", "lll", 2, true);
         //System.out.println(myZoo.searchAnimal(dog2));
 
           //.out.println(myZoo.removeAnimal(dog));
-        myZoo.displayAnimals();
+       /* myZoo.displayAnimals();
 
 
         System.out.println(myZoo);
@@ -77,9 +79,27 @@ public class ZooManagement {
         System.out.println("Maximum penguin depth: " + myZoo.maxPenguinDepth());
 
         myZoo.displayAquaticCountByType();
+        */
+
+         Zoo myZooo = new Zoo("Wildlife Park", "Ariana");
+        Animal kalb = new Animal("bergé", "rex", -1, true);
+        Animal test1 = new Animal("bergé", "mohamed", 2, true);
+        Animal test2 = new Animal("bergé", "xxx", 2, true);
+        Animal test3 = new Animal("bergé", "test", 2, true);
 
 
-
+        try {
+            myZooo.addAnimal(kalb);
+            myZooo.addAnimal(test1);
+            myZooo.addAnimal(test2);
+            myZooo.addAnimal(test3);
+        } catch (ZooFullException e) {
+            System.out.println("error"+ e.getMessage());
+        }
+        catch (InvalidAgeException i) {
+            System.out.println("error"+ i.getMessage());
+        }
+        System.out.println("test catch");
 
     }
 
