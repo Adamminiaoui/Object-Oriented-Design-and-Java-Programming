@@ -17,7 +17,7 @@ public class DepartementHashSet implements IDepartement<Departement> {
     public void ajouterDepartement(Departement d) {
         boolean added = departements.add(d);
         if (!added) {
-            System.out.println("⚠️ Département déjà existant (id + nom identiques) : " + d);
+            System.out.println(" Département déjà existant (id + nom identiques) : " + d);
         }
     }
 
@@ -40,7 +40,7 @@ public class DepartementHashSet implements IDepartement<Departement> {
     public void supprimerDepartement(Departement d) {
         boolean removed = departements.remove(d);
         if (!removed) {
-            System.out.println("❌ Département non trouvé : " + d);
+            System.out.println("Département non trouvé : " + d);
         }
     }
 
@@ -53,7 +53,7 @@ public class DepartementHashSet implements IDepartement<Departement> {
 
     @Override
     public void trierDepartementsParId() {
-        // HashSet n'est pas trié → on copie dans une liste
+
         List<Departement> list = new ArrayList<>(departements);
         Collections.sort(list); // utilise compareTo() (par id)
 

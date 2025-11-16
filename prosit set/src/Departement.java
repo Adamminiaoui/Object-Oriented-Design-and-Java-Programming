@@ -49,8 +49,8 @@ public class Departement implements Comparable<Departement> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;                  // même référence
-        if (o == null || getClass() != o.getClass()) // null ou classe différente
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
             return false;
 
         Departement that = (Departement) o;
@@ -61,7 +61,7 @@ public class Departement implements Comparable<Departement> {
 
     @Override
     public int hashCode() {
-        // Style comme dans la présentation : utilisation de nombres premiers
+
         int hash = 7;
         hash = 17 * hash + id;
         hash = 31 * hash + Objects.hashCode(nomDepartement);
@@ -70,7 +70,7 @@ public class Departement implements Comparable<Departement> {
 
     @Override
     public int compareTo(Departement d) {
-        // tri naturel par id (croissant)
+
         return Integer.compare(this.id, d.id);
     }
 }

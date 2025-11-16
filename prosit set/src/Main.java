@@ -12,7 +12,7 @@ public class Main {
         gestion.ajouterDepartement(d1);
         gestion.ajouterDepartement(d2);
         gestion.ajouterDepartement(d3);
-        gestion.ajouterDepartement(d4); // doit être refusé par le HashSet
+        gestion.ajouterDepartement(d4);
 
         System.out.println("\n  Liste des départements :");
         gestion.afficherDepartements();
